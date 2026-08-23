@@ -1,0 +1,4136 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #080b24;
+}
+
+
+/* ==========================================
+   MAIN EXPERIENCE
+========================================== */
+
+#experience {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   ALL SCENES
+========================================== */
+
+.scene {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: scale(1.03);
+
+    transition:
+        opacity 1.5s ease,
+        visibility 1.5s ease,
+        transform 1.5s ease;
+}
+
+.scene.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.scene canvas {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+
+/* ==========================================
+   SCENE 1 — BALLOON INTRO
+========================================== */
+
+#introScene {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 190, 220, 0.75),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(190, 180, 255, 0.70),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 50% 85%,
+            rgba(150, 210, 255, 0.55),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f7d8ed,
+            #d9d4f7,
+            #c7e4f7
+        );
+}
+
+
+/* ==========================================
+   INTRO CONTENT
+========================================== */
+
+.intro-content {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(90%, 800px);
+
+    text-align: center;
+
+    z-index: 10;
+}
+
+.small-text {
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(11px, 1.5vw, 15px);
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #5b3564;
+
+    margin-bottom: 14px;
+}
+
+.intro-content h1 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(48px, 8vw, 96px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    letter-spacing: 0;
+
+    color: #43194f;
+
+    text-shadow:
+        0 3px 12px rgba(255, 255, 255, 0.8),
+        0 0 25px rgba(130, 70, 150, 0.35);
+
+    margin-bottom: 22px;
+}
+
+.intro-subtitle {
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(13px, 2vw, 18px);
+
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.7;
+
+    color: #493e63;
+
+    margin-bottom: 36px;
+}
+
+
+/* ==========================================
+   BEGIN BUTTON
+========================================== */
+
+#beginBtn {
+    position: relative;
+
+    padding: 14px 34px;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    background: rgba(255, 255, 255, 0.28);
+
+    color: #43194f;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 8px 30px rgba(120, 80, 150, 0.18);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+#beginBtn:hover {
+    transform: translateY(-3px) scale(1.04);
+
+    background: rgba(255, 130, 185, 0.25);
+
+    box-shadow:
+        0 0 30px rgba(255, 100, 180, 0.35),
+        0 0 70px rgba(255, 100, 180, 0.12);
+}
+
+#beginBtn:active {
+    transform: scale(0.97);
+}
+
+
+/* =====================================================
+   🌸 SCENE 2 — BOUQUET
+   STEP 1 — PINK WRAPPING
+===================================================== */
+   #bouquetScene {
+  background:
+  radial-gradient(
+      circle at 50% 40%,
+      rgba(252, 238, 230, 0.45),
+      transparent 35%
+  ),
+  radial-gradient(
+      circle at 20% 75%,
+      rgba(240, 194, 178, 0.35),
+      transparent 35%
+  ),
+  radial-gradient(
+      circle at 80% 25%,
+      rgba(216, 162, 145, 0.3),
+      transparent 30%
+  ),
+  linear-gradient(
+      135deg,
+      #c48b7a,
+      #d8a291,
+      #a66f60
+  );
+}
+
+
+
+/* =====================================================
+   BOUQUET TEXT
+===================================================== */
+
+.bouquet-content {
+    position: absolute;
+
+    top: 7%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    z-index: 30;
+    pointer-events: none;
+}
+
+.bouquet-small {
+    margin-bottom: 8px;
+
+    font-size: clamp(10px, 1.3vw, 14px);
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: #e9b8c9;
+
+    text-shadow:
+        0 0 12px rgba(255, 150, 190, 0.35);
+}
+
+.bouquet-content h2 {
+  margin: 0;
+  font-family: "Great Vibes", cursive;
+  /* Scaled down minimum size from 42px to 28px for mobile fit */
+  font-size: clamp(28px, 5.5vw, 64px);
+  font-weight: 400;
+
+  /* Deep Espresso Brown matching the image typography */
+  color: #3b221e;
+
+  /* Soft Cream Glow + Sharp Contrast Shadow */
+  text-shadow:
+      0 0 12px rgba(255, 245, 238, 0.8),
+      0 0 28px rgba(255, 235, 225, 0.5),
+      0 2px 4px rgba(60, 30, 20, 0.15);
+
+  /* Prevents horizontal overflow on narrow screens */
+  max-width: 90vw;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+
+
+/* =====================================================
+   BOUQUET STAGE
+===================================================== */
+
+.rose-bouquet-stage {
+
+    position: absolute;
+
+    left: 50%;
+    top: 58%;
+
+    width: 430px;
+    height: 520px;
+
+    transform:
+        translate(-50%, 120%);
+
+    z-index: 10;
+
+    transition:
+        transform 2s cubic-bezier(.16,1,.3,1);
+}
+
+
+/* Stage rises when Scene 2 opens */
+
+#bouquetScene.active .rose-bouquet-stage {
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+/* =====================================================
+   SOFT GLOW
+===================================================== */
+
+.bouquet-glow {
+
+    position: absolute;
+
+    left: 50%;
+    top: 43%;
+
+    width: 360px;
+    height: 360px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.85),
+            rgba(255,190,215,.25),
+            transparent 70%
+        );
+
+    filter: blur(15px);
+
+    opacity: 0;
+
+    transition:
+        opacity 2s ease 1s;
+}
+
+#bouquetScene.active .bouquet-glow {
+    opacity: 1;
+}
+/* =====================================================
+   🎀 REALISTIC FLORIST BOUQUET WRAPPING
+   CURVED / GATHERED BOTTOM
+===================================================== */
+
+.bouquet-paper {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 390px;
+    height: 300px;
+
+    transform:
+        translateX(-50%)
+        translateY(330px);
+
+    opacity: 0;
+    z-index: 8;
+
+    transition:
+        transform 1.5s cubic-bezier(.16,1,.3,1),
+        opacity .7s ease;
+}
+
+
+/* =====================================================
+   WRAPPING RISES FROM BOTTOM
+===================================================== */
+
+#bouquetScene.active .bouquet-paper {
+    transform:
+        translateX(-50%)
+        translateY(0);
+
+    opacity: 1;
+
+    transition-delay: .15s;
+}
+
+
+/* =====================================================
+   🌸 BACK OUTER SHEET
+===================================================== */
+
+.paper-back {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 380px;
+    height: 285px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            145deg,
+            #efa2bd 0%,
+            #ffdce8 45%,
+            #e998b6 100%
+        );
+
+    /*
+       Rounded florist-style bottom
+    */
+    border-radius:
+        48% 48% 28% 28% /
+        14% 14% 32% 32%;
+
+    box-shadow:
+        0 15px 25px
+        rgba(100,30,60,.18);
+}
+
+
+/* =====================================================
+   🌸 LEFT FOLDED SHEET
+===================================================== */
+
+.paper-left {
+    position: absolute;
+
+    left: -5px;
+    bottom: 0;
+
+    width: 230px;
+    height: 275px;
+
+    background:
+        linear-gradient(
+            125deg,
+            #ffe1ec,
+            #efa4c0
+        );
+
+    /*
+       Curved outer edge
+    */
+    border-radius:
+        65% 15% 18% 42%;
+
+    transform:
+        rotate(-7deg);
+
+    z-index: 2;
+
+    box-shadow:
+        inset -10px 0 15px
+        rgba(150,50,90,.10);
+}
+
+
+/* =====================================================
+   🌸 CENTER FRONT FOLD
+===================================================== */
+
+.paper-center {
+    position: absolute;
+
+    left: 50%;
+    bottom: -5px;
+
+    width: 175px;
+    height: 295px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #f1b4cb,
+            #ffeaf2 48%,
+            #f0b0c8
+        );
+
+    /*
+       THIS creates the rounded
+       gathered bottom
+    */
+    border-radius:
+        22px 22px 52% 52%;
+
+    z-index: 5;
+
+    box-shadow:
+        inset 8px 0 12px
+        rgba(150,50,90,.10),
+
+        inset -8px 0 12px
+        rgba(150,50,90,.10);
+}
+
+
+/* =====================================================
+   🌸 RIGHT FOLDED SHEET
+===================================================== */
+
+.paper-right {
+    position: absolute;
+
+    right: -5px;
+    bottom: 0;
+
+    width: 230px;
+    height: 275px;
+
+    background:
+        linear-gradient(
+            235deg,
+            #ffe0ea,
+            #e99ab8
+        );
+
+    /*
+       Curved outer edge
+    */
+    border-radius:
+        15% 65% 42% 18%;
+
+    transform:
+        rotate(7deg);
+
+    z-index: 2;
+
+    box-shadow:
+        inset 10px 0 15px
+        rgba(150,50,90,.10);
+}
+
+
+/* =====================================================
+   🎀 GATHERED / CURVED BOTTOM
+===================================================== */
+
+.bouquet-paper::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -4px;
+
+    width: 125px;
+    height: 70px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #e99ab8,
+            #ffdce8 50%,
+            #e99ab8
+        );
+
+    /*
+       Rounded gathered florist bottom
+    */
+    border-radius:
+        0 0 50% 50%;
+
+    z-index: 7;
+
+    box-shadow:
+        0 -5px 12px
+        rgba(120,40,70,.10);
+}
+
+
+/* =====================================================
+   ✨ PAPER LIGHT / FOLD HIGHLIGHT
+===================================================== */
+
+.bouquet-paper::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 55px;
+
+    width: 140px;
+    height: 190px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            100deg,
+            transparent,
+            rgba(255,255,255,.3),
+            transparent
+        );
+
+    border-radius:
+        50% 50% 35% 35%;
+
+    pointer-events: none;
+
+    z-index: 8;
+}
+/* =====================================================
+   🎀 RIBBON — STEP 2
+===================================================== */
+
+.bouquet-ribbon {
+    position: absolute;
+
+    left: 50%;
+    bottom: 105px;
+
+    width: 145px;
+    height: 100px;
+
+    transform:
+        translateX(-50%)
+        translateY(80px)
+        scale(.1);
+
+    opacity: 0;
+
+    z-index: 15;
+
+    transition:
+        transform 1s cubic-bezier(.16,1.3,.3,1),
+        opacity .5s ease;
+}
+
+
+
+
+/* =====================================================
+   BOUQUET BUTTON
+   (we'll use it later)
+===================================================== */
+
+.bouquet-action-btn {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 7%;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    z-index: 40;
+
+    padding: 13px 32px;
+
+    border: none;
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7194,
+            #df315f
+        );
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(220,50,100,.3);
+
+    opacity: 0;
+
+    transition:
+        opacity .8s ease 2s,
+        transform .3s ease;
+}
+
+
+#bouquetScene.active .bouquet-action-btn {
+
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+.bouquet-action-btn:hover {
+
+    transform:
+        translateX(-50%)
+        translateY(-3px)
+        scale(1.04);
+}
+
+
+/* =====================================================
+   📱 MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .rose-bouquet-stage {
+
+        width: 360px;
+        height: 470px;
+    }
+
+    .bouquet-paper {
+
+        width: 290px;
+        height: 210px;
+    }
+
+    .bouquet-content h2 {
+
+        font-size: 45px;
+    }
+
+    .bouquet-small {
+
+        letter-spacing: 3px;
+    }
+}
+/* =====================================================
+   🎀 RIBBON — CLEAN VERSION
+===================================================== */
+
+.bouquet-ribbon {
+    position: absolute;
+    left: 50%;
+    bottom: 105px;
+
+    width: 160px;
+    height: 120px;
+
+    transform: translateX(-50%);
+
+    opacity: 1;
+
+    z-index: 999;
+
+    display: block;
+}
+
+
+/* LEFT LOOP */
+
+.ribbon-left {
+    position: absolute;
+
+    left: 5px;
+    top: 5px;
+
+    width: 65px;
+    height: 50px;
+
+    background: #ed4770;
+
+    border-radius: 70% 30% 70% 30%;
+
+    transform: rotate(-20deg);
+}
+
+
+/* RIGHT LOOP */
+
+.ribbon-right {
+    position: absolute;
+
+    right: 5px;
+    top: 5px;
+
+    width: 65px;
+    height: 50px;
+
+    background: #ed4770;
+
+    border-radius: 70% 30% 70% 30%;
+
+    transform: rotate(20deg);
+}
+
+
+/* CENTER KNOT */
+
+.ribbon-knot {
+    position: absolute;
+
+    left: 50%;
+    top: 18px;
+
+    width: 35px;
+    height: 35px;
+
+    transform: translateX(-50%);
+
+    background: #c91f50;
+
+    border-radius: 9px;
+
+    z-index: 10;
+}
+
+
+/* LEFT TAIL */
+
+.ribbon-tail-left {
+    position: absolute;
+
+    left: 35px;
+    top: 42px;
+
+    width: 30px;
+    height: 80px;
+
+    background: #df315f;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        80% 100%,
+        50% 80%,
+        20% 100%
+    );
+
+    transform: rotate(15deg);
+}
+
+
+/* RIGHT TAIL */
+
+.ribbon-tail-right {
+    position: absolute;
+
+    right: 35px;
+    top: 42px;
+
+    width: 30px;
+    height: 80px;
+
+    background: #df315f;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        80% 100%,
+        50% 80%,
+        20% 100%
+    );
+
+    transform: rotate(-15deg);
+}
+
+
+
+/* =====================================================
+   🎀 RIBBON
+===================================================== */
+
+.bouquet-ribbon {
+    position: absolute;
+
+    left: 50%;
+    top: 285px;
+
+    width: 150px;
+    height: 115px;
+
+    transform:
+        translateX(-50%)
+        scale(0);
+
+    z-index: 40;
+
+    opacity: 0;
+
+    transition:
+        transform 1s
+        cubic-bezier(.16,1.3,.3,1),
+        opacity .5s ease;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   🎀 RIBBON LOOPS
+===================================================== */
+
+.ribbon-loop {
+    position: absolute;
+
+    top: 5px;
+
+    width: 65px;
+    height: 48px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7294,
+            #d92f5b
+        );
+
+    box-shadow:
+        0 4px 8px
+        rgba(120,20,50,.2);
+}
+
+
+.ribbon-loop-left {
+    left: 8px;
+
+    border-radius:
+        70% 30% 70% 30%;
+
+    transform:
+        rotate(-22deg);
+}
+
+.ribbon-loop-right {
+    right: 8px;
+
+    border-radius:
+        30% 70% 30% 70%;
+
+    transform:
+        rotate(22deg);
+}
+
+
+/* =====================================================
+   🎀 KNOT
+===================================================== */
+
+.ribbon-knot {
+    position: absolute;
+
+    left: 50%;
+    top: 17px;
+
+    width: 34px;
+    height: 34px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed4a70,
+            #b91f4a
+        );
+
+    z-index: 10;
+}
+
+
+/* =====================================================
+   🎀 RIBBON TAILS
+===================================================== */
+
+.ribbon-tail {
+    position: absolute;
+
+    top: 43px;
+
+    width: 32px;
+    height: 72px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef4167,
+            #c5224d
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            82% 100%,
+            50% 78%,
+            18% 100%
+        );
+}
+
+
+.ribbon-tail-left {
+    left: 38px;
+
+    transform:
+        rotate(13deg);
+}
+
+.ribbon-tail-right {
+    right: 38px;
+
+    transform:
+        rotate(-13deg);
+}
+
+
+/* =====================================================
+   🎀 RIBBON APPEARS LAST
+===================================================== */
+
+#bouquetScene.active .bouquet-ribbon {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        scale(1);
+
+    transition-delay: 3.2s;
+}
+
+
+/* =====================================================
+   🌬️ FINAL NATURAL MOVEMENT
+===================================================== */
+
+#bouquetScene.active .flower-center {
+    animation:
+        centerSway 5s ease-in-out
+        infinite 4s;
+}
+
+#bouquetScene.active .flower-left {
+    animation:
+        leftSway 5.5s ease-in-out
+        infinite 4s;
+}
+
+#bouquetScene.active .flower-right {
+    animation:
+        rightSway 5.2s ease-in-out
+        infinite 4s;
+}
+
+
+@keyframes centerSway {
+
+    0%,100% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform:
+            rotate(2deg)
+            translateY(-3px);
+    }
+}
+
+
+@keyframes leftSway {
+
+    0%,100% {
+        transform: rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            rotate(-5deg)
+            translateY(-3px);
+    }
+}
+
+
+@keyframes rightSway {
+
+    0%,100% {
+        transform: rotate(8deg);
+    }
+
+    50% {
+        transform:
+            rotate(5deg)
+            translateY(-3px);
+    }
+}
+
+
+/* =====================================================
+   📱 MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .hand-bouquet {
+        transform:
+            translateX(-50%)
+            scale(.78);
+
+        transform-origin:
+            bottom center;
+    }
+
+    .bouquet-ribbon {
+        transform:
+            translateX(-50%)
+            scale(.78);
+    }
+}
+
+/* =====================================================
+   🌸 FINAL FLOWER POSITION
+   ANCHOR FLOWERS INSIDE THE WRAPPING
+===================================================== */
+
+.final-flower {
+    position: absolute;
+
+    bottom: 70px;
+
+    width: 90px;
+
+    transform-origin: bottom center;
+
+    pointer-events: none;
+}
+
+/* =====================================================
+   🌹 FINAL ROSE REALISM
+===================================================== */
+
+.drawn-rose {
+    filter:
+        drop-shadow(0 5px 7px rgba(100, 20, 40, .18));
+
+    transform-origin: center bottom;
+}
+
+
+/* Inner petal depth */
+
+.drawn-rose i:nth-child(1) {
+    box-shadow:
+        inset 5px 6px 8px rgba(255,255,255,.35),
+        inset -6px -8px 10px rgba(100,20,40,.20);
+}
+
+.drawn-rose i:nth-child(2) {
+    filter: brightness(.96);
+}
+
+.drawn-rose i:nth-child(3) {
+    filter: brightness(.92);
+}
+
+.drawn-rose i:nth-child(4) {
+    filter: brightness(.88);
+}
+
+
+/* Soft highlight */
+
+.drawn-rose::before {
+    box-shadow:
+        inset 4px 5px 8px rgba(255,255,255,.35),
+        0 2px 5px rgba(100,20,40,.18);
+}
+
+
+/* =====================================================
+   🍃 FINAL LEAF REALISM
+===================================================== */
+
+.bouquet-leaf {
+    filter:
+        drop-shadow(1px 3px 3px rgba(20,60,25,.18));
+}
+
+.bouquet-leaf::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 32px;
+    height: 1px;
+
+    background:
+        rgba(220,255,220,.35);
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-8deg);
+}
+
+
+/* =====================================================
+   🌬️ NATURAL FLOWER MOVEMENT
+===================================================== */
+
+#bouquetScene.active
+.bouquet-flower:nth-child(3n) {
+
+    animation:
+        bouquetSway1
+        6s
+        ease-in-out
+        infinite;
+}
+
+#bouquetScene.active
+.bouquet-flower:nth-child(3n + 1) {
+
+    animation:
+        bouquetSway2
+        6.5s
+        ease-in-out
+        infinite;
+}
+
+#bouquetScene.active
+.bouquet-flower:nth-child(3n + 2) {
+
+    animation:
+        bouquetSway3
+        7s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   🌿 VERY GENTLE SWAY
+===================================================== */
+
+@keyframes bouquetSway1 {
+
+    0%,100% {
+        transform:
+            rotate(-1deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(1.5deg)
+            translateY(-2px);
+    }
+}
+
+
+@keyframes bouquetSway2 {
+
+    0%,100% {
+        transform:
+            rotate(1deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(-1.5deg)
+            translateY(-2px);
+    }
+}
+
+
+@keyframes bouquetSway3 {
+
+    0%,100% {
+        transform:
+            rotate(-.5deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(1deg)
+            translateY(-1px);
+    }
+}
+
+
+/* =====================================================
+   ✨ FLOWER HIGHLIGHT
+===================================================== */
+
+.drawn-rose i:first-child::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+    height: 24px;
+
+    left: 12px;
+    top: 12px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.45),
+            transparent
+        );
+
+    transform: rotate(-25deg);
+
+    opacity: .7;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   💐 NEW MIXED BOUQUET — BASE
+===================================================== */
+
+.rose-bouquet-stage {
+    position: absolute;
+    left: 50%;
+    top: 52%;
+
+    width: 520px;
+    height: 560px;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+}
+
+
+/* =====================================================
+   ✨ SOFT BOUQUET GLOW
+===================================================== */
+
+.bouquet-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 42%;
+
+    width: 430px;
+    height: 430px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 205, 220, .45),
+            rgba(255, 235, 240, .2) 45%,
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   🌿 FLOWER AREA
+===================================================== */
+
+.final-bouquet {
+    position: absolute;
+
+    left: 50%;
+    bottom: 125px;
+
+    width: 460px;
+    height: 430px;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   🌿 INDIVIDUAL FLOWER
+===================================================== */
+
+.final-flower {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 100px;
+    height: 390px;
+
+    transform-origin: bottom center;
+
+    z-index: 10;
+}
+
+
+/* =====================================================
+   🌿 STEM
+===================================================== */
+
+.final-stem {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 100px;
+    height: 390px;
+
+    transform: translateX(-50%);
+
+    overflow: visible;
+}
+
+.final-stem path {
+    fill: none;
+
+    stroke: #426d47;
+
+    stroke-width: 4;
+
+    stroke-linecap: round;
+
+    stroke-dasharray: 420;
+    stroke-dashoffset: 420;
+
+    filter:
+        drop-shadow(
+            1px 2px 2px
+            rgba(20, 60, 25, .18)
+        );
+
+    transition:
+        stroke-dashoffset 1.8s
+        cubic-bezier(.16, 1, .3, 1);
+}
+
+
+/* =====================================================
+   🍃 LEAF
+===================================================== */
+
+.final-leaf {
+    position: absolute;
+
+    width: 52px;
+    height: 25px;
+
+    opacity: 0;
+
+    transform: scale(0);
+
+    background:
+        linear-gradient(
+            135deg,
+            #7daa72,
+            #315b38
+        );
+
+    border-radius:
+        100% 0 100% 0;
+
+    box-shadow:
+        inset
+        3px 3px 5px
+        rgba(255,255,255,.25),
+
+        2px 3px 5px
+        rgba(20,60,25,.2);
+
+    transition:
+        opacity .6s ease,
+        transform .8s
+        cubic-bezier(.16, 1, .3, 1);
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   🍃 LEAF VEIN
+===================================================== */
+
+.final-leaf::after {
+    content: "";
+
+    position: absolute;
+
+    left: 6px;
+    top: 50%;
+
+    width: 40px;
+    height: 1px;
+
+    background:
+        rgba(25, 70, 35, .5);
+
+    transform: rotate(-6deg);
+}
+
+
+/* =====================================================
+   🎀 RIBBON
+===================================================== */
+
+.bouquet-ribbon {
+    position: absolute;
+
+    left: 50%;
+    bottom: 70px;
+
+    width: 170px;
+    height: 125px;
+
+    transform:
+        translateX(-50%)
+        scale(0);
+
+    opacity: 0;
+
+    z-index: 50;
+
+    transition:
+        transform 1s
+        cubic-bezier(.16, 1.3, .3, 1),
+        opacity .5s ease;
+}
+
+
+/* Ribbon loops */
+
+.ribbon-loop {
+    position: absolute;
+
+    top: 5px;
+
+    width: 72px;
+    height: 52px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7897,
+            #d72d58
+        );
+
+    box-shadow:
+        0 5px 10px
+        rgba(100,20,45,.22);
+}
+
+.ribbon-loop-left {
+    left: 5px;
+
+    border-radius:
+        70% 30% 70% 30%;
+
+    transform: rotate(-22deg);
+}
+
+.ribbon-loop-right {
+    right: 5px;
+
+    border-radius:
+        30% 70% 30% 70%;
+
+    transform: rotate(22deg);
+}
+
+
+/* Ribbon knot */
+
+.ribbon-knot {
+    position: absolute;
+
+    left: 50%;
+    top: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    transform: translateX(-50%);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef4e72,
+            #b82049
+        );
+
+    z-index: 10;
+}
+
+
+/* Ribbon tails */
+
+.ribbon-tail {
+    position: absolute;
+
+    top: 48px;
+
+    width: 36px;
+    height: 78px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ee4269,
+            #c0214b
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            82% 100%,
+            50% 78%,
+            18% 100%
+        );
+}
+
+.ribbon-tail-left {
+    left: 42px;
+
+    transform: rotate(13deg);
+}
+
+.ribbon-tail-right {
+    right: 42px;
+
+    transform: rotate(-13deg);
+}
+
+
+/* =====================================================
+   📜 WRAPPING PAPER
+===================================================== */
+
+.bouquet-paper {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 300px;
+    height: 170px;
+
+    transform:
+        translateX(-50%)
+        scale(0);
+
+    transform-origin: bottom center;
+
+    z-index: 40;
+
+    opacity: 0;
+
+    transition:
+        transform 1s
+        cubic-bezier(.16, 1.2, .3, 1),
+        opacity .5s ease;
+}
+
+
+/* =====================================================
+   📜 PAPER SHAPE
+===================================================== */
+
+.paper-back,
+.paper-left,
+.paper-center,
+.paper-right {
+    position: absolute;
+
+    bottom: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf9,
+            #f3e7dc
+        );
+
+    box-shadow:
+        0 8px 18px
+        rgba(80,45,35,.14);
+}
+
+
+/* Back */
+
+.paper-back {
+    left: 50%;
+
+    width: 210px;
+    height: 150px;
+
+    transform:
+        translateX(-50%)
+        rotate(0deg);
+
+    clip-path:
+        polygon(
+            15% 0,
+            85% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+
+/* Left fold */
+
+.paper-left {
+    left: 25px;
+
+    width: 140px;
+    height: 145px;
+
+    transform:
+        rotate(15deg);
+
+    clip-path:
+        polygon(
+            20% 0,
+            100% 10%,
+            80% 100%,
+            0 100%
+        );
+}
+
+
+/* Center fold */
+
+.paper-center {
+    left: 50%;
+
+    width: 120px;
+    height: 160px;
+
+    transform:
+        translateX(-50%);
+
+    clip-path:
+        polygon(
+            20% 0,
+            80% 0,
+            100% 100%,
+            0 100%
+        );
+
+    z-index: 5;
+}
+
+
+/* Right fold */
+
+.paper-right {
+    right: 25px;
+
+    width: 140px;
+    height: 145px;
+
+    transform:
+        rotate(-15deg);
+
+    clip-path:
+        polygon(
+            0 10%,
+            80% 0,
+            100% 100%,
+            20% 100%
+        );
+}
+
+
+/* =====================================================
+   📱 MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .rose-bouquet-stage {
+        transform:
+            translate(-50%, -50%)
+            scale(.78);
+
+        transform-origin:
+            center center;
+    }
+}
+
+ /* =====================================================
+    💐 NEW BOUQUET — FLOWER DESIGNS
+    🌹 ROSE + 🌷 TULIP + 🤍 LILY
+ ===================================================== */
+
+
+/* =====================================================
+   🌸 COMMON FLOWER HEAD
+ ===================================================== */
+
+.flower-head {
+    position: absolute;
+
+    left: 50%;
+    top: -10px;
+
+    transform:
+        translateX(-50%)
+        scale(0);
+
+    transform-origin: center bottom;
+
+    opacity: 0;
+
+    z-index: 30;
+
+    transition:
+        transform 1.2s cubic-bezier(.16,1.3,.3,1),
+        opacity .6s ease;
+}
+
+
+/* =====================================================
+   🌹 ROSE
+ ===================================================== */
+
+.rose-head {
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 55%,
+            #8f183d 0%,
+            #b52b52 25%,
+            #d94c70 48%,
+            #ef7694 68%,
+            #f8a6ba 100%
+        );
+
+    box-shadow:
+        inset 8px 8px 12px
+            rgba(255,255,255,.28),
+
+        inset -10px -12px 15px
+            rgba(80,10,35,.28),
+
+        0 5px 12px
+            rgba(80,20,40,.2);
+}
+
+
+/* Rose petals */
+
+.rose-head span {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 55px;
+    height: 68px;
+
+    transform:
+        translate(-50%,-100%)
+        rotate(
+            calc(var(--petal) * 45deg)
+        );
+
+    transform-origin:
+        50% 100%;
+
+    border-radius:
+        60% 60% 45% 45%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffdce5 0%,
+            #f68ca7 35%,
+            #d94269 70%,
+            #9c2145 100%
+        );
+
+    border:
+        1px solid
+        rgba(120,25,55,.18);
+
+    box-shadow:
+        inset 4px 5px 8px
+            rgba(255,255,255,.3),
+
+        inset -5px -7px 9px
+            rgba(90,10,35,.22);
+}
+
+
+/* Rose center */
+
+.rose-head::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 43px;
+    height: 43px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffb9ca,
+            #d63861 50%,
+            #821938 100%
+        );
+
+    z-index: 40;
+
+    box-shadow:
+        inset 3px 4px 7px
+            rgba(255,255,255,.25);
+}
+
+
+/* Rose inner curl */
+
+.rose-head::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 18px;
+    height: 28px;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-25deg);
+
+    border-radius:
+        65% 25% 65% 25%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb0c2,
+            #a92146
+        );
+
+    z-index: 50;
+}
+
+
+/* =====================================================
+   🌷 TULIP
+ ===================================================== */
+
+.tulip-head {
+
+    width: 82px;
+    height: 100px;
+
+    border-radius:
+        50% 50% 42% 42% /
+        60% 60% 40% 40%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffe0e8 0%,
+            #ff9fb6 28%,
+            #ee557b 60%,
+            #bd2854 100%
+        );
+
+    box-shadow:
+        inset 7px 7px 10px
+            rgba(255,255,255,.3),
+
+        inset -8px -10px 13px
+            rgba(100,15,40,.2),
+
+        0 5px 10px
+            rgba(80,20,40,.18);
+}
+
+
+/* Tulip petals */
+
+.tulip-head span {
+
+    position: absolute;
+
+    bottom: 8px;
+
+    width: 38px;
+    height: 78px;
+
+    border-radius:
+        60% 60% 45% 45%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffe5ec,
+            #ff9bb3 38%,
+            #df416a 75%,
+            #a82048
+        );
+
+    box-shadow:
+        inset 3px 4px 7px
+            rgba(255,255,255,.3),
+
+        inset -4px -6px 8px
+            rgba(100,10,35,.18);
+}
+
+
+/* Tulip petal positions */
+
+.tulip-head span:nth-child(1) {
+    left: 3px;
+    transform:
+        rotate(-25deg);
+}
+
+.tulip-head span:nth-child(2) {
+    left: 18px;
+    transform:
+        rotate(-10deg);
+}
+
+.tulip-head span:nth-child(3) {
+    left: 30px;
+    transform:
+        rotate(0deg);
+}
+
+.tulip-head span:nth-child(4) {
+    right: 18px;
+    transform:
+        rotate(10deg);
+}
+
+.tulip-head span:nth-child(5) {
+    right: 3px;
+    transform:
+        rotate(25deg);
+}
+
+
+/* Tulip top opening */
+
+.tulip-head::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 15px;
+
+    width: 68px;
+    height: 38px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50% 50% 45% 45%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffb6c7,
+            #e94e74
+        );
+
+    box-shadow:
+        inset 0 5px 8px
+            rgba(255,255,255,.25);
+
+    z-index: 20;
+}
+
+
+/* Tulip inner shadow */
+
+.tulip-head::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 22px;
+
+    width: 35px;
+    height: 22px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(120,20,50,.2);
+
+    filter: blur(3px);
+
+    z-index: 25;
+}
+
+
+/* =====================================================
+   🤍 LILY
+ ===================================================== */
+
+.lily-head {
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    filter:
+        drop-shadow(
+            0 5px 8px
+            rgba(60,40,40,.15)
+        );
+}
+
+
+/* Lily petals */
+
+.lily-head span {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 48px;
+    height: 92px;
+
+    transform:
+        translate(-50%,-100%)
+        rotate(
+            calc(var(--petal) * 60deg)
+        );
+
+    transform-origin:
+        50% 100%;
+
+    border-radius:
+        65% 65% 42% 42%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #fff8fb 45%,
+            #f3dce7 75%,
+            #d8b4c5 100%
+        );
+
+    border:
+        1px solid
+        rgba(150,100,120,.18);
+
+    box-shadow:
+        inset 4px 5px 9px
+            rgba(255,255,255,.8),
+
+        inset -4px -7px 9px
+            rgba(120,70,100,.13);
+}
+
+
+/* Lily center */
+
+.lily-head::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 34px;
+    height: 34px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #f5c94f 0%,
+            #e6a72f 45%,
+            #b96b25 100%
+        );
+
+    box-shadow:
+        0 2px 5px
+            rgba(120,70,20,.2);
+
+    z-index: 35;
+}
+
+
+/* Lily stamens */
+
+.lily-head::after {
+
+    content:
+        "•  •  •  •  •  •";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 90px;
+
+    transform:
+        translate(-50%,-50%);
+
+    text-align: center;
+
+    font-size: 15px;
+
+    letter-spacing: 4px;
+
+    color: #b96b25;
+
+    z-index: 45;
+}
+
+
+/* =====================================================
+   🌿 STEM VARIATION
+ ===================================================== */
+
+.flower-rose .final-stem path {
+    stroke-width: 4;
+}
+
+.flower-tulip .final-stem path {
+    stroke-width: 3.5;
+}
+
+.flower-lily .final-stem path {
+    stroke-width: 4.5;
+}
+
+
+/* =====================================================
+   🍃 LEAF ROTATION
+ ===================================================== */
+
+.leaf-left {
+
+    transform-origin:
+        right center;
+
+    rotate: -25deg;
+}
+
+.leaf-right {
+
+    transform-origin:
+        left center;
+
+    rotate: 25deg;
+}
+
+
+/* =====================================================
+   🌸 FLOWER BLOOM
+ ===================================================== */
+
+.final-flower.blooming
+.flower-head {
+
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        scale(1);
+}
+
+
+/* =====================================================
+   🌿 STEM GROWTH
+ ===================================================== */
+
+.final-flower.growing
+.final-stem path {
+
+    stroke-dashoffset: 0;
+}
+
+
+/* =====================================================
+   🍃 LEAF GROWTH
+ ===================================================== */
+
+.final-flower.growing
+.final-leaf {
+
+    opacity: 1;
+
+    transform:
+        scale(1);
+}
+
+
+/* =====================================================
+   ✨ SLIGHT FLOWER HIGHLIGHT
+ ===================================================== */
+
+.rose-head span:first-child,
+.tulip-head span:first-child,
+.lily-head span:first-child {
+
+    filter:
+        brightness(1.08);
+}
+
+
+/* =====================================================
+   📱 MOBILE
+ ===================================================== */
+
+@media (max-width: 600px) {
+
+    .final-bouquet {
+
+        transform:
+            translateX(-50%)
+            scale(.82);
+
+        transform-origin:
+            bottom center;
+    }
+}
+
+
+/* =====================================================
+   🌹🌷🤍 NEW FINAL BOUQUET — VISIBILITY FIX
+===================================================== */
+
+.final-flower {
+    position: absolute;
+    bottom: 70px;
+    width: 100px;
+    transform-origin: bottom center;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
+/* STEM */
+
+.final-stem {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.final-stem path {
+    fill: none;
+    stroke: #3d7045;
+    stroke-width: 4;
+    stroke-linecap: round;
+    opacity: 1;
+}
+
+/* LEAVES */
+
+.final-leaf {
+    position: absolute;
+    width: 48px;
+    height: 22px;
+    background: linear-gradient(135deg, #79a96d, #315d38);
+    border-radius: 100% 0 100% 0;
+    opacity: 1;
+    z-index: 5;
+}
+
+/* FLOWER HEAD */
+
+.flower-head {
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    width: 75px;
+    height: 75px;
+    transform: translateX(-50%);
+    z-index: 20;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* PETALS */
+
+.flower-head span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 38px;
+    height: 55px;
+    transform-origin: 50% 100%;
+    border-radius: 50% 50% 45% 45%;
+}
+
+/* ROSE */
+
+.rose-head span {
+    background: linear-gradient(
+        145deg,
+        #ffd5df,
+        #ed6685,
+        #a92e4d
+    );
+
+    transform:
+        translate(-50%, -100%)
+        rotate(calc(var(--petal) * 45deg));
+}
+
+/* TULIP */
+
+.tulip-head span {
+    width: 32px;
+    height: 58px;
+    background: linear-gradient(
+        145deg,
+        #ffb0c5,
+        #e84f78,
+        #a92b4d
+    );
+
+    transform:
+        translate(-50%, -90%)
+        rotate(calc((var(--petal) - 2) * 15deg));
+}
+
+/* LILY */
+
+.lily-head span {
+    width: 25px;
+    height: 62px;
+    background: linear-gradient(
+        145deg,
+        #fffafd,
+        #f5dce9,
+        #e8a9c2
+    );
+
+    transform:
+        translate(-50%, -100%)
+        rotate(calc(var(--petal) * 60deg));
+}
+
+/* FLOWER CENTERS */
+
+.rose-head::after,
+.tulip-head::after,
+.lily-head::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #f5b94c;
+    z-index: 30;
+}
+
+/* =====================================================
+   💐 FINAL REALISTIC GROWING BOUQUET
+   🌹 ROSES + 🌷 TULIPS + 🤍 LILIES
+===================================================== */
+
+.rose-bouquet-stage {
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    width: 520px;
+    height: 620px;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+
+/* =====================================================
+   ✨ SOFT BOUQUET GLOW
+===================================================== */
+
+.bouquet-glow {
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+
+    width: 420px;
+    height: 420px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 190, 215, .22),
+            rgba(255, 190, 215, .08) 40%,
+            transparent 72%
+        );
+
+    filter: blur(18px);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   🌿 FLOWER CONTAINER
+===================================================== */
+
+.final-flower {
+    position: absolute;
+
+    left: 50%;
+    bottom: 115px;
+
+    width: 100px;
+
+    transform-origin: bottom center;
+
+    /*
+       IMPORTANT:
+       Every flower starts from the bouquet opening.
+    */
+
+    opacity: 1;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   🌿 STEM
+===================================================== */
+
+.final-stem {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 390px;
+
+    overflow: visible;
+
+    transform-origin: bottom center;
+}
+
+
+/* Actual stem */
+
+.final-stem path {
+
+    fill: none;
+
+    stroke: #47734b;
+
+    stroke-width: 4;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    filter:
+        drop-shadow(
+            1px 2px 2px
+            rgba(30, 70, 35, .25)
+        );
+
+    /*
+       Start invisible.
+    */
+
+    stroke-dasharray: 450;
+
+    stroke-dashoffset: 450;
+}
+
+
+/* =====================================================
+   🌱 STEM GROWTH
+===================================================== */
+
+.final-flower.grow .final-stem path {
+
+    stroke-dashoffset: 0;
+
+    transition:
+        stroke-dashoffset 2.2s
+        cubic-bezier(.16, 1, .3, 1);
+}
+
+
+/* =====================================================
+   🍃 LEAVES
+===================================================== */
+
+.final-leaf {
+
+    position: absolute;
+
+    width: 48px;
+    height: 23px;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #86b879,
+            #315f38
+        );
+
+    border-radius:
+        100% 0 100% 0;
+
+    box-shadow:
+        inset
+        3px 3px 5px
+        rgba(255,255,255,.22),
+
+        2px 3px 5px
+        rgba(20,60,25,.2);
+
+    transform-origin: center;
+}
+
+
+/* Leaf vein */
+
+.final-leaf::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 6px;
+    top: 50%;
+
+    width: 36px;
+    height: 1px;
+
+    background:
+        rgba(35,75,40,.45);
+
+    transform: rotate(-5deg);
+}
+
+
+/* Left leaf */
+
+.final-leaf.leaf-left {
+
+    transform:
+        rotate(-38deg)
+        scale(0);
+}
+
+
+/* Right leaf */
+
+.final-leaf.leaf-right {
+
+    transform:
+        rotate(35deg)
+        scale(0);
+}
+
+
+/* Leaves appear after stem starts */
+
+.final-flower.grow .final-leaf {
+
+    opacity: 1;
+
+    transition:
+        opacity .5s ease,
+        transform .8s
+        cubic-bezier(.16,1.3,.3,1);
+
+    transition-delay: 1.15s;
+}
+
+
+.final-flower.grow .leaf-left {
+
+    transform:
+        rotate(-38deg)
+        scale(1);
+}
+
+
+.final-flower.grow .leaf-right {
+
+    transform:
+        rotate(35deg)
+        scale(1);
+}
+
+
+/* =====================================================
+   🌸 FLOWER HEAD
+===================================================== */
+
+.flower-head {
+
+    position: absolute;
+
+    left: 50%;
+    top: -25px;
+
+    width: 100px;
+    height: 100px;
+
+    transform:
+        translateX(-50%)
+        scale(0);
+
+    opacity: 0;
+
+    transform-origin: center bottom;
+
+    z-index: 30;
+}
+
+
+/* Flower head appears after stem grows */
+
+.final-flower.grow .flower-head {
+
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        scale(1);
+
+    transition:
+        transform 1.2s
+        cubic-bezier(.16,1.3,.3,1),
+        opacity .5s ease;
+
+    transition-delay: 1.8s;
+}
+
+
+/* =====================================================
+   🌹 ROSE
+===================================================== */
+
+.rose-head span {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 42px;
+    height: 58px;
+
+    border-radius:
+        55% 55% 45% 45% /
+        65% 65% 35% 35%;
+
+    transform-origin: 50% 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff0f5,
+            #f28da8 35%,
+            #d9486c 70%,
+            #982844
+        );
+
+    border:
+        1px solid
+        rgba(120,35,60,.18);
+
+    box-shadow:
+        inset
+        4px 5px 8px
+        rgba(255,255,255,.3),
+
+        inset
+        -5px -7px 10px
+        rgba(80,10,30,.2);
+}
+
+
+/* Rose petals */
+
+.rose-head span:nth-child(1) {
+    transform:
+        translate(-50%,-100%)
+        rotate(0deg);
+}
+
+.rose-head span:nth-child(2) {
+    transform:
+        translate(-50%,-100%)
+        rotate(45deg);
+}
+
+.rose-head span:nth-child(3) {
+    transform:
+        translate(-50%,-100%)
+        rotate(90deg);
+}
+
+.rose-head span:nth-child(4) {
+    transform:
+        translate(-50%,-100%)
+        rotate(135deg);
+}
+
+.rose-head span:nth-child(5) {
+    transform:
+        translate(-50%,-100%)
+        rotate(180deg);
+}
+
+.rose-head span:nth-child(6) {
+    transform:
+        translate(-50%,-100%)
+        rotate(225deg);
+}
+
+.rose-head span:nth-child(7) {
+    transform:
+        translate(-50%,-100%)
+        rotate(270deg);
+}
+
+.rose-head span:nth-child(8) {
+    transform:
+        translate(-50%,-100%)
+        rotate(315deg);
+}
+
+
+/* Rose center */
+
+.rose-head::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 30px;
+    height: 30px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffd5df,
+            #dc4566 55%,
+            #8e2440
+        );
+
+    z-index: 50;
+}
+
+
+/* =====================================================
+   🌷 TULIP
+===================================================== */
+
+.tulip-head {
+
+    width: 75px;
+    height: 90px;
+}
+
+
+/* Tulip petals */
+
+.tulip-head span {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 38px;
+    height: 72px;
+
+    border-radius:
+        50% 50% 35% 35%;
+
+    transform-origin: bottom center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb3c7,
+            #ed6488 55%,
+            #b82f56
+        );
+
+    box-shadow:
+        inset
+        3px 3px 7px
+        rgba(255,255,255,.3);
+}
+
+
+.tulip-head span:nth-child(1) {
+    transform:
+        translate(-50%,-60%)
+        rotate(-28deg);
+}
+
+.tulip-head span:nth-child(2) {
+    transform:
+        translate(-50%,-65%)
+        rotate(-14deg);
+}
+
+.tulip-head span:nth-child(3) {
+    transform:
+        translate(-50%,-70%)
+        rotate(0deg);
+}
+
+.tulip-head span:nth-child(4) {
+    transform:
+        translate(-50%,-65%)
+        rotate(14deg);
+}
+
+.tulip-head span:nth-child(5) {
+    transform:
+        translate(-50%,-60%)
+        rotate(28deg);
+}
+
+
+/* =====================================================
+   🤍 LILY
+===================================================== */
+
+.lily-head {
+
+    width: 120px;
+    height: 120px;
+}
+
+
+/* Lily petals */
+
+.lily-head span {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 35px;
+    height: 85px;
+
+    border-radius:
+        55% 55% 45% 45%;
+
+    transform-origin:
+        50% 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff4f8 55%,
+            #f1b9ca
+        );
+
+    box-shadow:
+        inset
+        3px 4px 8px
+        rgba(255,255,255,.7),
+
+        2px 3px 5px
+        rgba(120,60,80,.12);
+}
+
+
+/* Lily arrangement */
+
+.lily-head span:nth-child(1) {
+    transform:
+        translate(-50%,-100%)
+        rotate(0deg);
+}
+
+.lily-head span:nth-child(2) {
+    transform:
+        translate(-50%,-100%)
+        rotate(60deg);
+}
+
+.lily-head span:nth-child(3) {
+    transform:
+        translate(-50%,-100%)
+        rotate(120deg);
+}
+
+.lily-head span:nth-child(4) {
+    transform:
+        translate(-50%,-100%)
+        rotate(180deg);
+}
+
+.lily-head span:nth-child(5) {
+    transform:
+        translate(-50%,-100%)
+        rotate(240deg);
+}
+
+.lily-head span:nth-child(6) {
+    transform:
+        translate(-50%,-100%)
+        rotate(300deg);
+}
+
+
+/* Lily center */
+
+.lily-head::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 24px;
+    height: 24px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #f8d875 0 35%,
+            #dcae42 40%,
+            #a87524 75%
+        );
+
+    z-index: 50;
+}
+
+
+/* =====================================================
+   🌿 NATURAL FLOWER SWAY
+===================================================== */
+
+.final-flower.sway {
+
+    animation:
+        bouquetFlowerSway
+        5s ease-in-out
+        infinite;
+}
+
+
+@keyframes bouquetFlowerSway {
+
+    0%,
+    100% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 3px;
+    }
+}
+
+
+/* =====================================================
+   🎀 BOUQUET PAPER MUST STAY IN FRONT OF STEM BASE
+===================================================== */
+
+.bouquet-paper {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    transform:
+        translateX(-50%);
+
+    width: 300px;
+    height: 190px;
+
+    z-index: 100;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   🌿 FLOWERS MUST EMERGE FROM PAPER
+===================================================== */
+
+/*
+   The flowers are behind the wrapping,
+   while their upper parts remain visible.
+*/
+
+.final-flower {
+    z-index: 20;
+}
+
+.bouquet-glow {
+    z-index: 1;
+}
+
+.bouquet-paper {
+    z-index: 100;
+}
+
+
+/* =====================================================
+   📱 MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .rose-bouquet-stage {
+
+        width: 100vw;
+        height: 560px;
+
+        bottom: 2%;
+    }
+
+    .final-flower {
+
+        transform-origin:
+            bottom center;
+
+    }
+
+    .bouquet-paper {
+
+        transform:
+            translateX(-50%)
+            scale(.82);
+
+        transform-origin:
+            bottom center;
+    }
+
+}
+
+
+/* =====================================================
+   💐 FINAL REALISTIC GROWING BOUQUET
+   🌹 ROSES + 🌷 TULIPS + 🤍 LILIES
+===================================================== */
+
+.rose-bouquet-stage {
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    width: 520px;
+    height: 620px;
+    top: 68%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+
+/* =====================================================
+   ✨ SOFT BOUQUET GLOW
+===================================================== */
+
+
+.bouquet-glow {
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+
+    width: 420px;
+    height: 420px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 190, 215, .22),
+            rgba(255, 190, 215, .08) 40%,
+            transparent 72%
+        );
+
+    filter: blur(18px);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   🌿 FLOWER CONTAINER
+===================================================== */
+
+.final-flower {
+    position: absolute;
+
+    left: 50%;
+    bottom: 115px;
+
+    width: 100px;
+
+    transform-origin: bottom center;
+
+    /*
+       IMPORTANT:
+       Every flower starts from the bouquet opening.
+    */
+
+    opacity: 1;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   🌿 STEM
+===================================================== */
+
+.final-stem {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 390px;
+
+    overflow: visible;
+
+    transform-origin: bottom center;
+}
+
+
+/* Actual stem */
+
+.final-stem path {
+
+    fill: none;
+
+    stroke: #47734b;
+
+    stroke-width: 4;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    filter:
+        drop-shadow(
+            1px 2px 2px
+            rgba(30, 70, 35, .25)
+        );
+
+    /*
+       Start invisible.
+    */
+
+    stroke-dasharray: 450;
+
+    stroke-dashoffset: 450;
+}
+
+
+/* =====================================================
+   🌱 STEM GROWTH
+===================================================== */
+
+.final-flower.grow .final-stem path {
+
+    stroke-dashoffset: 0;
+
+    transition:
+        stroke-dashoffset 2.2s
+        cubic-bezier(.16, 1, .3, 1);
+}
+
+
+/* =====================================================
+   🍃 LEAVES
+===================================================== */
+
+.final-leaf {
+
+    position: absolute;
+
+    width: 48px;
+    height: 23px;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #86b879,
+            #315f38
+        );
+
+    border-radius:
+        100% 0 100% 0;
+
+    box-shadow:
+        inset
+        3px 3px 5px
+        rgba(255,255,255,.22),
+
+        2px 3px 5px
+        rgba(20,60,25,.2);
+
+    transform-origin: center;
+}
+
+
+/* Leaf vein */
+
+.final-leaf::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 6px;
+    top: 50%;
+
+    width: 36px;
+    height: 1px;
+
+    background:
+        rgba(35,75,40,.45);
+
+    transform: rotate(-5deg);
+}
+
+
+/* Left leaf */
+
+.final-leaf.leaf-left {
+
+    transform:
+        rotate(-38deg)
+        scale(0);
+}
+
+
+/* Right leaf */
+
+.final-leaf.leaf-right {
+
+    transform:
+        rotate(35deg)
+        scale(0);
+}
+
+
+/* Leaves appear after stem starts */
+
+.final-flower.grow .final-leaf {
+
+    opacity: 1;
+
+    transition:
+        opacity .5s ease,
+        transform .8s
+        cubic-bezier(.16,1.3,.3,1);
+
+    transition-delay: 1.15s;
+}
+
+
+.final-flower.grow .leaf-left {
+
+    transform:
+        rotate(-38deg)
+        scale(1);
+}
+
+
+.final-flower.grow .leaf-right {
+
+    transform:
+        rotate(35deg)
+        scale(1);
+}
+
+
+/* =====================================================
+   🌸 FLOWER HEAD
+===================================================== */
+
+.flower-head {
+
+    position: absolute;
+
+    left: 50%;
+    top: -25px;
+
+    width: 100px;
+    height: 100px;
+
+    transform:
+        translateX(-50%)
+        scale(0);
+
+    opacity: 0;
+
+    transform-origin: center bottom;
+
+    z-index: 30;
+}
+
+
+/* Flower head appears after stem grows */
+
+.final-flower.grow .flower-head {
+
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        scale(1);
+
+    transition:
+        transform 1.2s
+        cubic-bezier(.16,1.3,.3,1),
+        opacity .5s ease;
+
+    transition-delay: 1.8s;
+}
+
+
+/* =====================================================
+   🌹 ROSE
+===================================================== */
+
+.rose-head span {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 42px;
+    height: 58px;
+
+    border-radius:
+        55% 55% 45% 45% /
+        65% 65% 35% 35%;
+
+    transform-origin: 50% 100%;
+
+    background:
+        linear-gradient(
+        145deg,
+        #ffb3c1,
+        #e6395c 35%,
+        #a80f32 70%,
+        #4a0718
+    );
+
+    border:
+        1px solid
+        rgba(120,35,60,.18);
+
+    box-shadow:
+        inset
+        4px 5px 8px
+        rgba(255,255,255,.3),
+
+        inset
+        -5px -7px 10px
+        rgba(80,10,30,.2);
+}
+
+
+/* Rose petals */
+
+.rose-head span:nth-child(1) {
+    transform:
+        translate(-50%,-100%)
+        rotate(0deg);
+}
+
+.rose-head span:nth-child(2) {
+    transform:
+        translate(-50%,-100%)
+        rotate(45deg);
+}
+
+.rose-head span:nth-child(3) {
+    transform:
+        translate(-50%,-100%)
+        rotate(90deg);
+}
+
+.rose-head span:nth-child(4) {
+    transform:
+        translate(-50%,-100%)
+        rotate(135deg);
+}
+
+.rose-head span:nth-child(5) {
+    transform:
+        translate(-50%,-100%)
+        rotate(180deg);
+}
+
+.rose-head span:nth-child(6) {
+    transform:
+        translate(-50%,-100%)
+        rotate(225deg);
+}
+
+.rose-head span:nth-child(7) {
+    transform:
+        translate(-50%,-100%)
+        rotate(270deg);
+}
+
+.rose-head span:nth-child(8) {
+    transform:
+        translate(-50%,-100%)
+        rotate(315deg);
+}
+
+
+/* Rose center */
+
+.rose-head::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 30px;
+    height: 30px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+          radial-gradient(
+        circle at 35% 30%,
+        #ff9caf,
+        #c51f43 55%,
+        #5a071c
+    );
+
+    z-index: 50;
+}
+
+
+/* =====================================================
+   🌷 TULIP
+===================================================== */
+
+.tulip-head {
+
+    width: 75px;
+    height: 90px;
+}
+
+
+/* Tulip petals */
+
+.tulip-head span {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 38px;
+    height: 72px;
+
+    border-radius:
+        50% 50% 35% 35%;
+
+    transform-origin: bottom center;
+
+    background:
+      linear-gradient(
+        135deg,
+        #ffabc9,
+        #c9579b 55%,
+        #49245f
+      );
+
+    box-shadow:
+        inset
+        3px 3px 7px
+        rgba(255,255,255,.3);
+}
+
+
+.tulip-head span:nth-child(1) {
+    transform:
+        translate(-50%,-60%)
+        rotate(-28deg);
+}
+
+.tulip-head span:nth-child(2) {
+    transform:
+        translate(-50%,-65%)
+        rotate(-14deg);
+}
+
+.tulip-head span:nth-child(3) {
+    transform:
+        translate(-50%,-70%)
+        rotate(0deg);
+}
+
+.tulip-head span:nth-child(4) {
+    transform:
+        translate(-50%,-65%)
+        rotate(14deg);
+}
+
+.tulip-head span:nth-child(5) {
+    transform:
+        translate(-50%,-60%)
+        rotate(28deg);
+}
+
+
+/* =====================================================
+   🤍 LILY
+===================================================== */
+
+.lily-head {
+
+    width: 120px;
+    height: 120px;
+}
+
+
+/* Lily petals */
+
+.lily-head span {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 35px;
+    height: 85px;
+
+    border-radius:
+        55% 55% 45% 45%;
+
+    transform-origin:
+        50% 100%;
+
+    background:
+          linear-gradient(
+        145deg,
+        #fffdf5,
+        #f8e6d0 55%,
+        #d9a6a9
+    );
+
+    box-shadow:
+        inset
+        3px 4px 8px
+        rgba(255,255,255,.7),
+
+        2px 3px 5px
+        rgba(120,60,80,.12);
+}
+
+
+/* Lily arrangement */
+
+.lily-head span:nth-child(1) {
+    transform:
+        translate(-50%,-100%)
+        rotate(0deg);
+}
+
+.lily-head span:nth-child(2) {
+    transform:
+        translate(-50%,-100%)
+        rotate(60deg);
+}
+
+.lily-head span:nth-child(3) {
+    transform:
+        translate(-50%,-100%)
+        rotate(120deg);
+}
+
+.lily-head span:nth-child(4) {
+    transform:
+        translate(-50%,-100%)
+        rotate(180deg);
+}
+
+.lily-head span:nth-child(5) {
+    transform:
+        translate(-50%,-100%)
+        rotate(240deg);
+}
+
+.lily-head span:nth-child(6) {
+    transform:
+        translate(-50%,-100%)
+        rotate(300deg);
+}
+
+
+/* Lily center */
+
+.lily-head::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 24px;
+    height: 24px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #f8d875 0 35%,
+            #dcae42 40%,
+            #a87524 75%
+        );
+
+    z-index: 50;
+}
+
+
+/* =====================================================
+   🌿 NATURAL FLOWER SWAY
+===================================================== */
+
+.final-flower.sway {
+
+    animation:
+        bouquetFlowerSway
+        5s ease-in-out
+        infinite;
+}
+
+
+@keyframes bouquetFlowerSway {
+
+    0%,
+    100% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 3px;
+    }
+}
+
+
+/* =====================================================
+   🎀 BOUQUET PAPER MUST STAY IN FRONT OF STEM BASE
+===================================================== */
+
+.bouquet-paper {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    transform:
+        translateX(-50%);
+
+    width: 300px;
+    height: 190px;
+
+    z-index: 100;
+
+    pointer-events: none;
+}
+
+
+
+
+/* =====================================================
+   🌿 FLOWERS MUST EMERGE FROM PAPER
+===================================================== */
+
+/*
+   The flowers are behind the wrapping,
+   while their upper parts remain visible.
+*/
+
+.final-flower {
+    z-index: 20;
+}
+
+.bouquet-glow {
+    z-index: 1;
+}
+
+.bouquet-paper {
+    z-index: 100;
+}
+
+
+/* =====================================================
+   📱 MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .rose-bouquet-stage {
+
+        width: 100vw;
+        height: 560px;
+
+        bottom: 2%;
+    }
+
+    .final-flower {
+
+        transform-origin:
+            bottom center;
+
+    }
+
+    .bouquet-paper {
+
+        transform:
+            translateX(-50%)
+            scale(.82);
+
+        transform-origin:
+            bottom center;
+    }
+
+}
+
+/* =====================================================
+   🎀 RIBBON MUST WRAP AROUND FLOWER STEMS
+===================================================== */
+
+.final-flower {
+    position: absolute;
+    transform-origin: bottom center;
+}
+
+.bouquet-ribbon {
+    z-index: 100;
+}
+
+
+/* ==========================================
+   SCENE LAYOUT & AUTOMATIC TRANSITION
+   ========================================== */
+
+.scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.5s ease-in-out, visibility 1.5s ease-in-out;
+  z-index: 1;
+}
+
+/* Active visible scene */
+.scene.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+/* Cake Scene Background Fallback & Canvas */
+#cakeScene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #2c3e50;
+  overflow: hidden;
+}
+
+#cakeCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Overlay Text (White with Soft Glow for Dark Background) */
+.cake-scene-text {
+  position: absolute;
+  top: 5%; /* Shifted up from 8% to give the cake more room */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  color: #ffffff;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6),
+               0 0 20px rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  animation: fadeInText 2s ease forwards;
+  animation-delay: 10.5s;
+  pointer-events: none;
+}
+
+.cake-scene-text h1 {
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem); /* Reduced size to prevent overlap */
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.cake-scene-text p {
+  font-size: clamp(0.85rem, 1.8vw, 1.1rem); /* Compact subtitle size */
+  color: #e0e0e0;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Subtle bottom prompt for scene transition */
+.tap-prompt {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 8px 18px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.tap-prompt.visible {
+  opacity: 1;
+}
+
+
+
+
+
+

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Soul Dear To Me 🌹</title>
+
+    <!-- Google Fonts Links (Fixed CDN paths) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet Link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main id="experience">
+
+    <!-- SCENE 1 — BALLOON INTRO -->
+    <section id="introScene" class="scene active">
+
+        <canvas id="introCanvas"></canvas>
+
+        <div class="intro-content">
+            <p class="small-text">A little something for you</p>
+
+            <h1>A Soul Dear To Me</h1>
+
+            <p class="intro-subtitle">
+                There's something beautiful waiting for you...
+            </p>
+
+            <button id="beginBtn">
+                Begin ✨
+            </button>
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+     🌹 SCENE 2 — MIXED FLOWER BOUQUET
+========================================== -->
+
+<section id="bouquetScene" class="scene">
+
+    <canvas id="bouquetCanvas"></canvas>
+
+    <div class="bouquet-content">
+        <p class="bouquet-small">For someone special</p>
+        <h2>HAPPY BIRTHDAY</h2>
+    </div>
+
+
+    <!-- ======================================
+         💐 BOUQUET STAGE
+    ======================================= -->
+
+    <div class="rose-bouquet-stage">
+
+        <!-- ✨ Soft background glow -->
+        <div class="bouquet-glow"></div>
+
+
+        <!-- ==================================
+             🌿 FLOWERS WILL GROW FROM HERE
+        =================================== -->
+
+        <div
+            class="final-bouquet"
+            id="finalBouquet">
+
+            <!--
+                JavaScript will create:
+
+                🌹 Roses
+                🌷 Tulips
+                🤍 Lilies
+                🍃 Leaves
+                🌿 Curved stems
+
+                here automatically.
+            -->
+
+        </div>
+
+
+        <!-- ==================================
+             🎀 BOUQUET RIBBON
+        =================================== -->
+
+        <div class="bouquet-ribbon">
+
+            <div class="ribbon-loop ribbon-loop-left"></div>
+
+            <div class="ribbon-loop ribbon-loop-right"></div>
+
+            <div class="ribbon-knot"></div>
+
+            <div class="ribbon-tail ribbon-tail-left"></div>
+
+            <div class="ribbon-tail ribbon-tail-right"></div>
+
+        </div>
+
+
+        <!-- ==================================
+             📜 BOUQUET WRAPPING
+        =================================== -->
+
+        <div class="bouquet-paper">
+
+            <div class="paper-back"></div>
+
+            <div class="paper-left"></div>
+
+            <div class="paper-center"></div>
+
+            <div class="paper-right"></div>
+
+        </div>
+
+        <div id="tapPrompt" class="tap-prompt">Tap anywhere for cake 🎂</div>
+</div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- ==========================================
+         SCENE 3 — CAKE
+    ========================================== -->
+
+   <section id="cakeScene" class="scene">
+    <canvas id="cakeCanvas"></canvas>
+    <div class="cake-scene-text">
+        <h1>Happy Birthday! ❤️</h1>
+        <p>Make a wish...</p>
+    </div>
+</section>
+
+</main>
+
+    <script src="script.js"></script>
+</body>
+</html>
